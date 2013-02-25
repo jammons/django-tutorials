@@ -1,7 +1,16 @@
 from django.conf.urls import patterns, url
 
+from .rest import BookList, AuthorList
+
 urlpatterns = patterns('',
-    url(r'^$', base_views.redirect_to_index),
-    url(r'^books/', include('tutorials.books.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(
+        r'^books/$',
+        BookList.as_view(),
+        name='books_api'
+    ),
+    url(
+        r'^authors/$',
+        AuthorList.as_view(),
+        name='authors_api'
+    ),
 )
