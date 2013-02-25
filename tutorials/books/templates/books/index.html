@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Mark Read?</th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author.all }}</td>
+        <td><a href="{% url mark_read book_id=book.pk %}">(X)</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

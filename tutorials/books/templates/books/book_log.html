@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Book</th>
+        <th>User</th>
+        <th>Date</th>
+    </tr>
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.book }}</td>
+        <td>{{ log.user }}</td>
+        <td>{{ log.time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
