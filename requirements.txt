@@ -2,3 +2,4 @@ django>=1.4
 celery>=3.0
 django-celery>=3.0
 South>=0.7.6
+djangorestframework==2.2.1
