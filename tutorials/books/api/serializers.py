@@ -10,11 +10,15 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'first_name', 'last_name')
 
 
+class AuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+
+
 class BookSerializer(serializers.ModelSerializer):
+    author = AuthorSerializer()
+
     class Meta:
         model = Book
 
 
-class AuthorSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Author
